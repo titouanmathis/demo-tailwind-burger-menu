@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo — Tailwind CSS burger menu</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body class="w-full" style="height: 5000px;">
+    <button
+      data-menu-toggle="js-burger-menu"
+      data-menu-close="js-burger-submenu-1,js-burger-submenu-2"
+      type="button"
+      class="absolute top-0 right-0 m-4 py-4 px-6 rounded bg-black text-white"
+    >
+      Open/Close Menu
+    </button>
+    <nav class="z-50 fixed top-0 left-0 w-full max-w-md h-full">
+      <!-- START Menu level #1 -->
+      <div
+        id="js-burger-menu"
+        class="absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+      >
+        <p class="p-8 text-lg font-semibold">Menu level #1</p>
+        <ul>
+          <li>
+            <a
+              data-menu-open="js-burger-submenu-1"
+              href="#item-1"
+              class="group flex items-center justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              <div class="pr-12">
+                Item 1<br />
+                <div class="mt-2 opacity-50 text-xs leading-tight">
+                  Open the submenu above the main menu.
+                </div>
+              </div>
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#item-2"
+              class="group flex items-center justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              <div class="pr-12">
+                Item 2<br />
+                <div class="mt-2 opacity-50 text-xs leading-tight">No submenu.</div>
+              </div>
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              data-menu-open="js-burger-submenu-3"
+              href="#item-3"
+              class="group flex items-center justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              <div class="pr-12">
+                Item 3<br />
+                <div class="mt-2 opacity-50 text-xs leading-tight">
+                  Open the submenu above the main menu.
+                </div>
+              </div>
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- END Menu level #1 -->
+      <!-- START Submenu 1 level #1 -->
+      <div
+        id="js-burger-submenu-1"
+        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+      >
+        <p class="p-8 text-lg font-semibold">Submenu level #2</p>
+        <ul>
+          <li>
+            <a
+              data-menu-close="js-burger-submenu-1"
+              href="#item-1-0"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-white hover:bg-gray-100 transition duration-200 ease-out-expo"
+            >
+              <span
+                class="inline-block transform group-hover:-translate-x-1 transition duration-200 ease-out-expo"
+              >
+                ←
+              </span>
+              Back
+            </a>
+          </li>
+          <li>
+            <a
+              href="#item-1-1"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              Item 1.1
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#item-1-2"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              Item 1.2
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- END Submenu 1 level #1 -->
+      <!-- START Submenu 3 level #1 -->
+      <div
+        id="js-burger-submenu-3"
+        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+      >
+        <p class="p-8 text-lg font-semibold">Submenu level #2</p>
+        <ul>
+          <li>
+            <a
+              data-menu-close="js-burger-submenu-3"
+              href="#item-1-0"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-white hover:bg-gray-100 transition duration-200 ease-out-expo"
+            >
+              <span
+                class="inline-block transform group-hover:-translate-x-1 transition duration-200 ease-out-expo"
+              >
+                ←
+              </span>
+              Back
+            </a>
+          </li>
+          <li>
+            <a
+              data-menu-open="js-burger-submenu-3-1"
+              href="#item-1-1"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              <div class="pr-12">
+                Item 3.1<br />
+                <div class="mt-2 opacity-50 text-xs leading-tight">
+                  Open a level 3 submenu.
+                </div>
+              </div>
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#item-1-2"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              Item 3.2
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- END Submenu 3 level #1 -->
+      <!-- START Submenu 3.1 level #2 -->
+      <div
+        id="js-burger-submenu-3-1"
+        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+      >
+        <p class="p-8 text-lg font-semibold">Submenu level #3</p>
+        <ul>
+          <li>
+            <a
+              data-menu-close="js-burger-submenu-3-1"
+              data-menu-open="js-burger-submenu-3"
+              href="#item-1-0"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-white hover:bg-gray-100 transition duration-200 ease-out-expo"
+            >
+              <span
+                class="inline-block transform group-hover:-translate-x-1 transition duration-200 ease-out-expo"
+              >
+                ←
+              </span>
+              Back
+            </a>
+          </li>
+          <li>
+            <a
+              href="#item-1-1"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              Item 3.1.1
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#item-1-2"
+              class="group flex justify-between py-5 pr-10 pl-8 bg-gray-200 hover:bg-gray-300 transition duration-200 ease-out-expo"
+            >
+              Item 3.1.2
+              <span
+                class="inline-block transform group-hover:translate-x-1 transition duration-200 ease-out-expo"
+              >
+                →
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- END Submenu 3.1 level #2 -->
+    </nav>
+    <script src="src/index.js"></script>
+  </body>
+</html>

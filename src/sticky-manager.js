@@ -56,7 +56,7 @@ const StickyManager = {
   init: function init() {
     this.element = document.querySelector('#js-sticky');
     this.scrollHandler = this.scrollHandler.bind(this);
-    window.addEventListener('scroll', this.scrollHandler);
+    window.addEventListener('scroll', this.scrollHandler, { passive: true });
 
     // Trigger the scrollHandler method on init
     this.scrollHandler();
@@ -103,7 +103,6 @@ const StickyManager = {
    * @return {void}
    */
   show: function show() {
-    console.log('show');
     this.visibleClasses.forEach(className => {
       this.element.classList.add(className);
     });

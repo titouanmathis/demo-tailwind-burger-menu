@@ -6,20 +6,33 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
 
-  <body class="w-full" style="height: 5000px;">
-    <button
-      data-menu-toggle="js-burger-menu"
-      data-menu-close="js-burger-submenu-1,js-burger-submenu-2"
-      type="button"
-      class="absolute top-0 right-0 m-4 py-4 px-6 rounded bg-black text-white"
-    >
-      Open/Close Menu
-    </button>
-    <nav class="z-50 fixed top-0 left-0 w-full max-w-md h-full">
+  <body class="w-full bg-gray-200" style="height: 5000px;">
+    <header id="js-sticky" class="fixed top-0 left-0 flex items-center justify-between w-full py-4 px-8 bg-white transform transition duration-300 ease-out-expo">
+      <ul class="flex items-center">
+        <li class="mr-6">
+          <a class="inline-block border-b" href="#">Link #1</a>
+        </li>
+        <li class="mr-6">
+          <a class="inline-block border-b" href="#">Link #2</a>
+        </li>
+        <li class="mr-6">
+          <a class="inline-block border-b" href="#">Link #3</a>
+        </li>
+      </ul>
+      <button
+        data-menu-toggle="js-burger-menu"
+        data-menu-close="js-burger-submenu-1,js-burger-submenu-2"
+        type="button"
+        class="py-4 px-6 rounded bg-black text-white"
+      >
+        Open/Close Menu
+      </button>
+    </header>
+    <nav class="z-50 fixed top-0 left-0 w-full max-w-md h-full pointer-events-none">
       <!-- START Menu level #1 -->
       <div
         id="js-burger-menu"
-        class="absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+        class="absolute top-0 left-0 w-full max-w-md h-full bg-white pointer-events-auto transform -translate-x-full transition duration-300 ease-out-expo"
       >
         <p class="p-8 text-lg font-semibold">Menu level #1</p>
         <ul>
@@ -83,7 +96,7 @@
       <!-- START Submenu 1 level #1 -->
       <div
         id="js-burger-submenu-1"
-        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white pointer-events-auto transform -translate-x-full transition duration-300 ease-out-expo"
       >
         <p class="p-8 text-lg font-semibold">Submenu level #2</p>
         <ul>
@@ -133,7 +146,7 @@
       <!-- START Submenu 3 level #1 -->
       <div
         id="js-burger-submenu-3"
-        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white pointer-events-auto transform -translate-x-full transition duration-300 ease-out-expo"
       >
         <p class="p-8 text-lg font-semibold">Submenu level #2</p>
         <ul>
@@ -189,7 +202,7 @@
       <!-- START Submenu 3.1 level #2 -->
       <div
         id="js-burger-submenu-3-1"
-        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white transform -translate-x-full transition duration-300 ease-out-expo"
+        class="z-10 absolute top-0 left-0 w-full max-w-md h-full bg-white pointer-events-auto transform -translate-x-full transition duration-300 ease-out-expo"
       >
         <p class="p-8 text-lg font-semibold">Submenu level #3</p>
         <ul>
@@ -238,6 +251,7 @@
       </div>
       <!-- END Submenu 3.1 level #2 -->
     </nav>
-    <script src="src/index.js"></script>
+    <script defer src="src/menu-manager.js"></script>
+    <script defer src="src/sticky-manager.js"></script>
   </body>
 </html>

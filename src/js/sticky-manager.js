@@ -103,10 +103,10 @@ const StickyManager = {
    * @return {void}
    */
   show: function show() {
-    this.visibleClasses.forEach(className => {
+    this.visibleClasses.forEach((className) => {
       this.element.classList.add(className);
     });
-    this.hiddenClasses.forEach(className => {
+    this.hiddenClasses.forEach((className) => {
       this.element.classList.remove(className);
     });
     this.isVisible = true;
@@ -118,10 +118,10 @@ const StickyManager = {
    * @return {void}
    */
   hide: function hide() {
-    this.visibleClasses.forEach(className => {
+    this.visibleClasses.forEach((className) => {
       this.element.classList.remove(className);
     });
-    this.hiddenClasses.forEach(className => {
+    this.hiddenClasses.forEach((className) => {
       this.element.classList.add(className);
     });
     this.isVisible = false;

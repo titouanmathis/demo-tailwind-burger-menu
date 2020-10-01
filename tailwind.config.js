@@ -32,4 +32,9 @@ module.exports = {
   variants: {
     translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
+  purge: ['src/templates/**/*.twig', 'src/**/*.js', 'src/**/*.vue'],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
 };

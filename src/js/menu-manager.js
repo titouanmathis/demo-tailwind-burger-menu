@@ -49,11 +49,11 @@ const MenuManager = {
    * @return {void}
    */
   open: function open(menu) {
-    this.openClasses.forEach(className => {
+    this.openClasses.forEach((className) => {
       menu.classList.add(className);
     });
 
-    this.closeClasses.forEach(className => {
+    this.closeClasses.forEach((className) => {
       menu.classList.remove(className);
     });
   },
@@ -65,11 +65,11 @@ const MenuManager = {
    * @return {void}
    */
   close: function close(menu) {
-    this.openClasses.forEach(className => {
+    this.openClasses.forEach((className) => {
       menu.classList.remove(className);
     });
 
-    this.closeClasses.forEach(className => {
+    this.closeClasses.forEach((className) => {
       menu.classList.add(className);
     });
   },
@@ -81,11 +81,11 @@ const MenuManager = {
    * @return {void}
    */
   toggle: function toggle(menu) {
-    this.openClasses.forEach(className => {
+    this.openClasses.forEach((className) => {
       menu.classList.toggle(className);
     });
 
-    this.closeClasses.forEach(className => {
+    this.closeClasses.forEach((className) => {
       menu.classList.toggle(className);
     });
   },
@@ -98,14 +98,14 @@ const MenuManager = {
    * @return {void}
    */
   bindClick: function bindClick(btns, type) {
-    Array.from(btns).forEach(btn => {
-      btn.addEventListener('click', e => {
+    Array.from(btns).forEach((btn) => {
+      btn.addEventListener('click', (e) => {
         e.preventDefault();
         // A single button can trigger an action on multipke menus,
         // so we get the data attribute's value and split it into
         // an array from the delimiter `,`.
         const names = btn.getAttribute(`data-menu-${type}`).split(',');
-        names.forEach(name => {
+        names.forEach((name) => {
           const menu = document.querySelector(`#${name}`);
 
           // If no menu were found, do nothing.
